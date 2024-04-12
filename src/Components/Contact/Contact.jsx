@@ -1,9 +1,10 @@
 import { TiUser } from "react-icons/ti";
 import { TiPhone } from "react-icons/ti";
+import css from "./Contact.module.css";
 
 const Contact = ({ name, number, id, onDelete }) => {
   return (
-    <div>
+    <div className={css.contactContainer}>
       <div>
         <p>
           <TiUser />
@@ -14,7 +15,9 @@ const Contact = ({ name, number, id, onDelete }) => {
           {number}
         </p>
       </div>
-      <button onClick={() => onDelete(id)}>Delete</button>
+      <button className={css.button} onClick={() => onDelete(id)}>
+        Delete
+      </button>
     </div>
   );
 };
