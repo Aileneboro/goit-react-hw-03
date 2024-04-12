@@ -28,12 +28,18 @@ const App = () => {
     ]);
   };
 
+  const deleteContact = (id) => {
+    setContacts((prevContacts) =>
+      prevContacts.filter((contact) => contact.id !== id)
+    );
+  };
+
   return (
     <div>
       <h1>Phonebook</h1>
       <ContactForm onSubmit={addContact} />
       <SearchBox value={filter} onChange={handleChangeFilter} />
-      <ContactList contacts={filteredContacts} />
+      <ContactList contacts={filteredContacts} onDelete={deleteContact} />
     </div>
   );
 };
